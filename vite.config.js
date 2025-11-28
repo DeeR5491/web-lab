@@ -2,15 +2,17 @@ import { defineConfig } from 'vite';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url'
 import handlebars from 'vite-plugin-handlebars'
+import tailwindcss from '@tailwindcss/vite';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname  = dirname(__filename)
 
 export default defineConfig({
     plugins: [
+        tailwindcss(),
         handlebars({
             partialDirectory: resolve(__dirname, 'src', 'partials'),
-            context: { siteName: 'Лабораторна 6', labName: 'Лабораторна №6', studentGroup: '6.1213-2пі', studentEmail: 'kostuk.andre.061@gmail.com', studentPhone: '+380661416451' },
+            context: { siteName: 'Лабораторна 7', labName: 'Лабораторна №7', studentGroup: '6.1213-2пі', studentEmail: 'kostuk.andre.061@gmail.com', studentPhone: '+380661416451' },
             reloadOnPartialChange: true
         }),
     ],
